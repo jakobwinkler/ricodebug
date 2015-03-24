@@ -111,7 +111,7 @@ class RecentFileHandler():
         """Load recently used files from self.recentfiles to the menu. """
         for action_index in range(self.nrRecentFiles):
             filename = self.recentFiles[action_index]
-            if exists(filename):
+            if filename is not None and exists(filename):
                 self.actions[action_index].setText(filename)
                 self.actions[action_index].setVisible(True)
             else:
